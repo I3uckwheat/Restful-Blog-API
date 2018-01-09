@@ -12,6 +12,28 @@ let store = {
       {text: 'I think you’re undervaluing the benefit of ‘let’ and ‘const’.'},
       {text: '(p1,p2)=>{ … } ,i understand this ,thank you !'}
     ]
-    }
-  ]
+  }
+]
 }
+
+const routes = require('./routes');
+
+const app = express();
+app.use(morgan('dev'));
+app.use((bodyParser.json()));
+app.use((req,res, next) => {
+  req.store = store
+  next();
+})
+
+app.get("/posts", routes.posts.getPosts)
+app.post("/posts", routes.posts.addPost)
+app.put("/posts/:id", routes.posts.updatePost)
+app.delete("/posts/:id", reoutes.posts.removePost)
+
+app.get("/posts/:postId/comments", routes.comments.getComments)
+app.post("/posts/:postId/comments", routes.comments.addComment)
+app.put("/posts/:postId/comments/:commentId", routes.comments.updateComment)
+app.delete("/posts/:postId/comments/:commentId", routes.comments.removeComment)
+
+app.listen(3000);
