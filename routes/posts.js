@@ -9,9 +9,10 @@ module.exports = {
     res.status(201).send({id: id});
   },
   updatePost(req, res) {
-    const post = store.posts[req.params.id]
+    store.posts[req.params.id] = req.body
+    res.status(200).send(store.posts[req.params.id])
   },
   removePost(req, res) {
-
+    store.posts.splice(req.params.id, 1)
   }
 }
