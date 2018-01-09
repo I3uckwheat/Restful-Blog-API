@@ -1,0 +1,23 @@
+{
+  "name": "restfulblogapi",
+  "version": "1.0.0",
+  "description": "This project is an assignment from the microsoft node.js EDX course. This project is to demonstrate the useage of express.js and RESTful api principals. As well as npm usage and modularity of code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I3uckwheat/Restful-Blog-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/I3uckwheat/Restful-Blog-API/issues"
+  },
+  "homepage": "https://github.com/I3uckwheat/Restful-Blog-API#readme",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "morgan": "1.9.0"
+  }
+}
