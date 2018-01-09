@@ -29,7 +29,7 @@ app.use((req,res, next) => {
 app.get("/posts", routes.posts.getPosts)
 app.post("/posts", routes.posts.addPost)
 app.put("/posts/:id", routes.posts.updatePost)
-app.delete("/posts/:id", reoutes.posts.removePost)
+app.delete("/posts/:id", routes.posts.removePost)
 
 app.get("/posts/:postId/comments", routes.comments.getComments)
 app.post("/posts/:postId/comments", routes.comments.addComment)
