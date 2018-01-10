@@ -4,9 +4,9 @@ module.exports = {
     res.status(200).send(post.comments)
   },
   addComment(req, res) {
-    const comment = req.body
+    const comments = store.posts[req.params.postId].comments
     const id = req.store.posts[req.params.postId].comments.length;
-    store.posts[req.params.postId].comments[id] = comment;
+    comments.push(req.body);
     res.status(201).send({id: id})
   },
   updateComment(req, res) {
