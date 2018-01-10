@@ -5,7 +5,7 @@ module.exports = {
   },
   addComment(req, res) {
     const comments = store.posts[req.params.postId].comments
-    const id = req.store.posts[req.params.postId].comments.length;
+    const id = comments.length
     comments.push(req.body);
     res.status(201).send({id: id})
   },
